@@ -86,21 +86,21 @@ function App() {
       termsofservice: formValues.termsofservice,
     };
     postNewAccount(newAccount);
-    setFormValues(initialFormValues)
+    setFormValues(initialFormValues);
   }
 
-      //Side effects
+  //Side effects
 
-      useEffect(()=>{
-        getAccounts()
-      },[]);
+  useEffect(() => {
+    getAccounts();
+  }, []);
 
-        //makes the button enable after form is filled out
-      useEffect(()=>{
-          schema.isValid(formValues).then((valid)=>{
-            setDisabled(!valid)
-          });
-      },[formValues])
+  //makes the button enable after form is filled out
+  useEffect(() => {
+    schema.isValid(formValues).then((valid) => {
+      setDisabled(!valid);
+    });
+  }, [formValues]);
   return (
     <div className="App">
       <header>

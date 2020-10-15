@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 export default function Form(props) {
   const { values, submit, change, disabled, errors } = props;
@@ -7,6 +8,7 @@ export default function Form(props) {
   function onSubmit(evt) {
     evt.preventDefault();
     submit();
+    window.alert("Your form has been sent!");
   }
 
   //makes the onCHange function
@@ -77,9 +79,10 @@ export default function Form(props) {
           ></input>
         </label>
       </div>
-      <div className='submit-button'>
-       
-        <button disabled={disabled}>submit</button>
+      <div className="submit-button">
+        <button id="submitBtn" disabled={disabled}>
+          submit
+        </button>
       </div>
     </form>
   );
